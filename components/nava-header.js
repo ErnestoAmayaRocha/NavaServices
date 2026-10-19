@@ -10,7 +10,7 @@ class NavaHeader extends HTMLElement {
 
           <a class="nava-brand" href="/index.html" aria-label="NAVA Services Group">
            <img
-  src="/assets/img/IMAGE-LOGO-NSG.WEBP"
+  src="https://www.navaservices.com/assets/img/IMAGE-LOGO-NSG.webp"
   alt="NAVA Services Group Logo"
   width="170"
   height="56"
