@@ -1,0 +1,269 @@
+
+:root {
+  --nava-navy: #061A2F;
+  --nava-green: #69AD49;
+  --nava-yellow: #F5A900;
+  --nava-border: #E6EAF0;
+}
+
+nava-header {
+  display: block;
+  position: relative;
+  z-index: 1000;
+}
+
+.nava-header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid var(--nava-border);
+  box-shadow: 0 4px 22px rgba(6, 26, 47, 0.045);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.nava-header__inner {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.nava-brand {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: var(--nava-navy);
+  text-decoration: none;
+  line-height: 1;
+}
+
+.nava-brand__name {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+
+.nava-brand__subtitle {
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+}
+
+.nava-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 34px);
+}
+
+.nava-nav__link {
+  position: relative;
+  padding: 12px 0;
+  color: var(--nava-navy);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nava-nav__link:hover,
+.nava-nav__link.is-active {
+  color: var(--nava-green);
+}
+
+.nava-nav__link.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  height: 2px;
+  background: var(--nava-green);
+}
+
+.nava-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 19px;
+  border-radius: 7px;
+  background: var(--nava-green);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nava-nav__cta:hover {
+  background: #57983A;
+  transform: translateY(-1px);
+}
+
+.nava-nav__cta span {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.nava-language {
+  display: flex;
+  align-items: center;
+}
+
+.nava-language select {
+  max-width: 130px;
+  padding: 8px 9px;
+  border: 1px solid var(--nava-border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--nava-navy);
+  font: inherit;
+  font-size: 13px;
+}
+
+.nava-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  border: 1px solid var(--nava-border);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.nava-menu-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--nava-navy);
+}
+
+@media (max-width: 820px) {
+  .nava-header__inner {
+    width: calc(100% - 32px);
+    min-height: 76px;
+    gap: 16px;
+  }
+
+  .nava-brand__name {
+    font-size: 27px;
+  }
+
+  .nava-menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nava-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 18px 24px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    background: #fff;
+    border-bottom: 1px solid var(--nava-border);
+    box-shadow: 0 14px 22px rgba(6, 26, 47, 0.08);
+  }
+
+  .nava-nav.is-open {
+    display: flex;
+  }
+
+  .nava-nav__link {
+    padding: 13px 0;
+  }
+
+  .nava-nav__link.is-active::after {
+    display: none;
+  }
+
+  .nava-nav__cta {
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .nava-language {
+    padding-top: 8px;
+  }
+}
+
+/* Logo */
+.nava-brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.nava-brand img {
+  display: block;
+  width: 170px;
+  height: 56px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Contenedor del header */
+.nava-header__inner {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 88px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+/* Botón hamburguesa */
+.nava-menu-toggle {
+  display: none;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  border: 1px solid #E6EAF0;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.nava-menu-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  background: #061A2F;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .nava-header__inner {
+    width: calc(100% - 32px);
+    min-height: 76px;
+    gap: 16px;
+  }
+
+  .nava-brand img {
+    width: 145px;
+    height: 48px;
+  }
+
+  .nava-menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .nava-brand img {
+    width: 125px;
+    height: 42px;
+  }
+}

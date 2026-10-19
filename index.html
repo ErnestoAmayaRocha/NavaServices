@@ -1,6 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<link rel="stylesheet" href="/components/nava-header.css">
+<script src="/components/nava-header.js" defer></script>
+
+
+<link rel="stylesheet" href="/components/nava-hero.css">
+<script src="/components/nava-hero.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#061a2f">
@@ -61,21 +81,28 @@
       footer { flex-direction: column; align-items: flex-start; }
     }
   </style>
+  
+
+<script>
+  window.gtranslateSettings = {
+    default_language: "en",
+    languages: ["en", "es"],
+    wrapper_selector: ".gtranslate_wrapper"
+  };
+</script>
+
+<script
+  src="https://cdn.gtranslate.net/widgets/latest/dropdown.js"
+  defer>
+</script>
 </head>
 <body>
-  <div class="top-line" aria-hidden="true"></div>
-  <header>
-    <a class="brand" href="/" aria-label="NAVA Services Group home">
-      <span class="brand-mark" aria-hidden="true">N</span>
-      <span>
-        <span class="brand-name">NAVA Services Group</span>
-        <span class="brand-subtitle">BUSINESS • TAX • ACCOUNTING</span>
-      </span>
-    </a>
-    <div class="header-note">A better experience is on the way</div>
-  </header>
 
+  <div class="top-line" aria-hidden="true"></div>
+  <nava-header></nava-header>
+  
   <main>
+     
     <section class="content" aria-labelledby="page-title">
       <div class="status"><span class="status-dot" aria-hidden="true"></span> Website update in progress</div>
       <h1 id="page-title">We’re building<br><span>something better.</span></h1>
@@ -86,8 +113,9 @@
         <a class="email" href="mailto:info@navaservices.com">info@navaservices.com</a>
       </div>
     </section>
+    
   </main>
-
+ <nava-hero></nava-hero>
   <footer>
     <span class="footer-brand">NAVA Services Group</span>
     <span>© <span id="year">2026</span> NAVA Services Group. All rights reserved.</span>
