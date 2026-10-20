@@ -1,0 +1,1688 @@
+body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--nava-navy);
+      background: #fff;
+    }
+.nava-services-page {
+  --nsp-navy: #061A2F;
+  --nsp-navy-light: #0B2945;
+  --nsp-green: #69AD49;
+  --nsp-yellow: #F5A900;
+  --nsp-white: #FFFFFF;
+  --nsp-muted: #647486;
+  --nsp-border: #E3E9EF;
+  color: var(--nsp-navy);
+  background: #fff;
+  font-family: Inter, Arial, sans-serif;
+  overflow: hidden;
+}
+
+.nava-services-page *,
+.nava-services-page *::before,
+.nava-services-page *::after {
+  box-sizing: border-box;
+}
+
+.nava-services-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nava-services-page a:focus-visible {
+  outline: 3px solid var(--nsp-yellow);
+  outline-offset: 4px;
+}
+
+.nava-services-page .nsp-container {
+  width: min(1160px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.nava-services-page .nsp-section {
+  padding: 100px 0;
+}
+
+.nava-services-page .nsp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--nsp-green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.nava-services-page .nsp-eyebrow--light {
+  color: #B5E39F;
+}
+
+.nava-services-page .nsp-eyebrow__line {
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.nava-services-page .nsp-button {
+  min-height: 54px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.4;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.nava-services-page .nsp-button span {
+  font-size: 19px;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+
+.nava-services-page .nsp-button:hover {
+  transform: translateY(-3px);
+}
+
+.nava-services-page .nsp-button:hover span {
+  transform: translate(2px, -2px);
+}
+
+.nava-services-page .nsp-button--green {
+  color: #071B2E;
+  background: var(--nsp-green);
+  box-shadow: 0 10px 25px rgb(105 173 73 / 18%);
+}
+
+.nava-services-page .nsp-button--green:hover {
+  background: #80C65E;
+  box-shadow: 0 14px 32px rgb(105 173 73 / 28%);
+}
+
+.nava-services-page .nsp-button--navy {
+  color: #fff;
+  background: var(--nsp-navy);
+}
+
+.nava-services-page .nsp-button--navy:hover {
+  background: #103452;
+  box-shadow: 0 12px 25px rgb(6 26 47 / 18%);
+}
+
+.nava-services-page .nsp-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nava-services-page .nsp-text-link--light {
+  color: #fff;
+}
+
+.nava-services-page .nsp-text-link span {
+  font-size: 18px;
+  transition: transform .2s ease;
+}
+
+.nava-services-page .nsp-text-link:hover span {
+  transform: translateY(4px);
+}
+
+.nava-services-page .nsp-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+
+.nava-services-page .nsp-reveal.nsp-is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO */
+
+.nava-services-page .nsp-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 85% 40%, rgb(21 73 91 / 36%), transparent 36%),
+    linear-gradient(120deg, #041322 0%, #061A2F 55%, #0A2943 100%);
+}
+
+.nava-services-page .nsp-hero__grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .14;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 10%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 10%) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(90deg, transparent, #000 55%, #000);
+}
+
+.nava-services-page .nsp-hero__glow {
+  position: absolute;
+  z-index: -1;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(95px);
+  pointer-events: none;
+}
+
+.nava-services-page .nsp-hero__glow--one {
+  top: -260px;
+  left: -130px;
+  background: rgb(105 173 73 / 20%);
+}
+
+.nava-services-page .nsp-hero__glow--two {
+  right: -200px;
+  bottom: -250px;
+  background: rgb(245 169 0 / 12%);
+}
+
+.nava-services-page .nsp-hero__layout {
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  align-items: center;
+  gap: 45px;
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.nava-services-page .nsp-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.nava-services-page .nsp-hero h1 {
+  max-width: 650px;
+  margin: 25px 0 22px;
+  color: #fff;
+  font-size: clamp(42px, 5vw, 66px);
+  font-weight: 750;
+  line-height: 1.06;
+  letter-spacing: -2.8px;
+}
+
+.nava-services-page .nsp-hero h1 span {
+  display: block;
+  color: var(--nsp-green);
+}
+
+.nava-services-page .nsp-hero__description {
+  max-width: 520px;
+  margin: 0;
+  color: #C3CFDA;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.nava-services-page .nsp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 23px;
+  margin-top: 32px;
+}
+
+.nava-services-page .nsp-hero__trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 38px;
+  color: #C8D4DF;
+  font-size: 12px;
+}
+
+.nava-services-page .nsp-hero__trust-icon {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid rgb(105 173 73 / 65%);
+  border-radius: 50%;
+  color: #B5E39F;
+  font-size: 12px;
+}
+
+.nava-services-page .nsp-hero__bottom {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 12px 20px;
+  border-top: 1px solid rgb(255 255 255 / 9%);
+  color: #93A4B5;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+}
+
+.nava-services-page .nsp-hero__bottom-line {
+  width: 34px;
+  height: 1px;
+  background: rgb(105 173 73 / 70%);
+}
+
+/* HERO FINANCIAL CARD */
+
+.nava-services-page .nsp-hero-visual {
+  position: relative;
+  min-width: 0;
+  padding: 35px 10px;
+}
+
+.nava-services-page .nsp-visual-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgb(255 255 255 / 9%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.nava-services-page .nsp-visual-orbit--outer {
+  width: 500px;
+  height: 500px;
+}
+
+.nava-services-page .nsp-visual-orbit--inner {
+  width: 390px;
+  height: 390px;
+  border-color: rgb(105 173 73 / 15%);
+}
+
+.nava-services-page .nsp-finance-card {
+  position: relative;
+  z-index: 1;
+  max-width: 475px;
+  margin-inline: auto;
+  padding: 26px;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 5%));
+  box-shadow: 0 35px 85px rgb(0 0 0 / 25%);
+  backdrop-filter: blur(14px);
+  animation: nsp-card-float 6s ease-in-out infinite;
+}
+
+.nava-services-page .nsp-finance-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.nava-services-page .nsp-finance-card__label {
+  color: #8DA0B3;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.nava-services-page .nsp-finance-card__top h2 {
+  margin: 8px 0 0;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.nava-services-page .nsp-finance-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #C7D4DE;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.nava-services-page .nsp-finance-card__status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--nsp-green);
+  box-shadow: 0 0 10px rgb(105 173 73 / 65%);
+}
+
+.nava-services-page .nsp-finance-card__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 32px;
+}
+
+.nava-services-page .nsp-finance-card__metric span {
+  color: #A9B8C6;
+  font-size: 12px;
+}
+
+.nava-services-page .nsp-finance-card__metric strong {
+  color: #fff;
+  font-size: 21px;
+  font-weight: 650;
+}
+
+.nava-services-page .nsp-chart {
+  position: relative;
+  height: 160px;
+  margin-top: 10px;
+}
+
+.nava-services-page .nsp-chart__guides {
+  position: absolute;
+  inset: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nava-services-page .nsp-chart__guides span {
+  width: 100%;
+  border-top: 1px dashed rgb(255 255 255 / 10%);
+}
+
+.nava-services-page .nsp-chart svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.nava-services-page .nsp-finance-card__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.nava-services-page .nsp-finance-card__bottom span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #C5D1DC;
+  font-size: 9px;
+}
+
+.nava-services-page .nsp-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.nava-services-page .nsp-dot--green {
+  background: var(--nsp-green);
+}
+
+.nava-services-page .nsp-dot--yellow {
+  background: var(--nsp-yellow);
+}
+
+.nava-services-page .nsp-dot--white {
+  background: #DDE6EF;
+}
+
+.nava-services-page .nsp-floating-note {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 10px;
+  background: #102D46;
+  box-shadow: 0 15px 40px rgb(0 0 0 / 25%);
+  animation: nsp-note-float 5s ease-in-out infinite;
+}
+
+.nava-services-page .nsp-floating-note--top {
+  top: 0;
+  right: -10px;
+}
+
+.nava-services-page .nsp-floating-note--bottom {
+  bottom: 0;
+  left: -15px;
+  animation-delay: -2s;
+}
+
+.nava-services-page .nsp-floating-note__icon,
+.nava-services-page .nsp-floating-note__check {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 8px;
+  color: #B8E6A2;
+  background: rgb(105 173 73 / 16%);
+  font-size: 18px;
+}
+
+.nava-services-page .nsp-floating-note__check {
+  color: #061A2F;
+  background: var(--nsp-green);
+}
+
+.nava-services-page .nsp-floating-note strong,
+.nava-services-page .nsp-floating-note div > span {
+  display: block;
+}
+
+.nava-services-page .nsp-floating-note strong {
+  color: #fff;
+  font-size: 10px;
+}
+
+.nava-services-page .nsp-floating-note div > span {
+  margin-top: 5px;
+  color: #A7B8C8;
+  font-size: 9px;
+}
+
+/* INTRO */
+
+.nava-services-page .nsp-intro {
+  position: relative;
+  background: #fff;
+}
+
+.nava-services-page .nsp-intro__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 90px;
+}
+
+.nava-services-page .nsp-intro h2,
+.nava-services-page .nsp-section-heading h2 {
+  margin: 20px 0 0;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  font-weight: 750;
+}
+
+.nava-services-page .nsp-intro h2 span,
+.nava-services-page .nsp-section-heading h2 span {
+  display: block;
+  color: var(--nsp-green);
+}
+
+.nava-services-page .nsp-intro__copy > p {
+  margin: 0 0 17px;
+  color: #596A7B;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.nava-services-page .nsp-intro__signature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 27px;
+  color: var(--nsp-navy);
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.7;
+}
+
+.nava-services-page .nsp-intro__signature-line {
+  width: 35px;
+  height: 3px;
+  flex-shrink: 0;
+  background: var(--nsp-yellow);
+}
+
+/* SERVICE SECTIONS */
+
+.nava-services-page .nsp-service {
+  position: relative;
+  isolation: isolate;
+  padding: 105px 0;
+  scroll-margin-top: 90px;
+}
+
+.nava-services-page .nsp-service--light {
+  background:
+    radial-gradient(ellipse at 0% 50%, rgb(105 173 73 / 5%), transparent 34%),
+    #F7F9FB;
+}
+
+.nava-services-page .nsp-service--navy {
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 90% 50%, rgb(105 173 73 / 10%), transparent 35%),
+    linear-gradient(125deg, #061A2F, #09243D);
+}
+
+.nava-services-page .nsp-service__pattern {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .08;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 14%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 14%) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+
+.nava-services-page .nsp-service__layout {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  align-items: center;
+  gap: clamp(45px, 7vw, 95px);
+}
+
+.nava-services-page .nsp-service__layout--reverse {
+  grid-template-columns: 1.08fr .92fr;
+}
+
+.nava-services-page .nsp-service__layout--reverse .nsp-service__visual {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.nava-services-page .nsp-service__layout--reverse .nsp-service__content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.nava-services-page .nsp-service__number {
+  display: block;
+  margin-bottom: 25px;
+  color: #8593A1;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.nava-services-page .nsp-service--navy .nsp-service__number {
+  color: #9AAFC1;
+}
+
+.nava-services-page .nsp-service__content h2 {
+  margin: 19px 0;
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 750;
+  line-height: 1.12;
+  letter-spacing: -1.7px;
+}
+
+.nava-services-page .nsp-service__content h2 span {
+  display: block;
+  color: var(--nsp-green);
+}
+
+.nava-services-page .nsp-service__description {
+  margin: 0 0 26px;
+  color: #617183;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.nava-services-page .nsp-service--navy .nsp-service__description {
+  color: #C2CFDB;
+}
+
+.nava-services-page .nsp-service__content h3 {
+  margin: 25px 0 15px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.nava-services-page .nsp-check-list {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.nava-services-page .nsp-check-list li {
+  position: relative;
+  padding-left: 29px;
+  color: #526476;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.nava-services-page .nsp-check-list li::before {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 50%;
+  color: #2F6D28;
+  background: #E5F2DE;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.nava-services-page .nsp-check-list--light li {
+  color: #D2DCE5;
+}
+
+.nava-services-page .nsp-check-list--light li::before {
+  color: #061A2F;
+  background: var(--nsp-green);
+}
+
+.nava-services-page .nsp-service__content > .nsp-button {
+  margin-top: 4px;
+}
+
+/* ACCOUNTING ILLUSTRATION */
+
+.nava-services-page .nsp-illustration {
+  position: relative;
+  display: grid;
+  min-height: 430px;
+  place-items: center;
+}
+
+.nava-services-page .nsp-illustration__backdrop {
+  position: absolute;
+  width: 82%;
+  height: 82%;
+  border-radius: 35% 65% 60% 40% / 44% 39% 61% 56%;
+  background: linear-gradient(145deg, #E2EEDC, #EEF2F5);
+  animation: nsp-morph 12s ease-in-out infinite;
+}
+
+.nava-services-page .nsp-document {
+  position: relative;
+  width: min(340px, 90%);
+  padding: 26px;
+  border: 1px solid #E5EAF0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 30px 65px rgb(6 26 47 / 13%);
+  transform: rotate(-3deg);
+  transition: transform .4s ease;
+}
+
+.nava-services-page .nsp-illustration:hover .nsp-document {
+  transform: rotate(0) translateY(-5px);
+}
+
+.nava-services-page .nsp-document__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nava-services-page .nsp-document__logo {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border-radius: 7px;
+  color: #fff;
+  background: var(--nsp-navy);
+  font-weight: 800;
+}
+
+.nava-services-page .nsp-document__label {
+  color: #8A99A8;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.nava-services-page .nsp-document__title {
+  width: 58%;
+  height: 10px;
+  margin-top: 28px;
+  border-radius: 4px;
+  background: #183D5A;
+}
+
+.nava-services-page .nsp-document__subtitle {
+  width: 36%;
+  height: 6px;
+  margin-top: 9px;
+  border-radius: 4px;
+  background: #DCE3E9;
+}
+
+.nava-services-page .nsp-document__numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  margin-top: 24px;
+}
+
+.nava-services-page .nsp-document__numbers > div {
+  display: grid;
+  gap: 9px;
+  padding: 13px;
+  border: 1px solid #E8EDF1;
+  border-radius: 6px;
+}
+
+.nava-services-page .nsp-document__numbers span {
+  color: #8795A3;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.nava-services-page .nsp-document__numbers i {
+  width: 75%;
+  height: 6px;
+  border-radius: 4px;
+  background: #E2E8ED;
+}
+
+.nava-services-page .nsp-document__numbers i:last-child {
+  width: 48%;
+  background: #D8E8D0;
+}
+
+.nava-services-page .nsp-document__bars {
+  height: 105px;
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 15px 15px 0;
+  border-bottom: 1px solid #E6EBEF;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 25px,
+    #E9EEF2 26px
+  );
+}
+
+.nava-services-page .nsp-document__bars span {
+  width: 23px;
+  min-height: 10px;
+  border-radius: 4px 4px 0 0;
+  background: var(--nsp-green);
+}
+
+.nava-services-page .nsp-document__bars span:nth-child(2n) {
+  background: #A7C99A;
+}
+
+.nava-services-page .nsp-illustration__badge {
+  position: absolute;
+  right: -2px;
+  bottom: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 15px;
+  border: 1px solid #E3E9E2;
+  border-radius: 8px;
+  color: var(--nsp-navy);
+  background: #fff;
+  box-shadow: 0 12px 32px rgb(6 26 47 / 10%);
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.nava-services-page .nsp-illustration__badge span {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--nsp-green);
+}
+
+.nava-services-page .nsp-illustration__spark {
+  position: absolute;
+  color: var(--nsp-yellow);
+  font-size: 27px;
+}
+
+.nava-services-page .nsp-illustration__spark--one {
+  top: 52px;
+  right: 60px;
+}
+
+.nava-services-page .nsp-illustration__spark--two {
+  bottom: 72px;
+  left: 24px;
+  color: var(--nsp-green);
+  font-size: 19px;
+}
+
+/* TAX ILLUSTRATION */
+
+.nava-services-page .nsp-illustration--tax {
+  overflow: hidden;
+}
+
+.nava-services-page .nsp-tax-orbit {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 50%;
+}
+
+.nava-services-page .nsp-tax-orbit--two {
+  width: 310px;
+  height: 310px;
+  border-color: rgb(105 173 73 / 32%);
+}
+
+.nava-services-page .nsp-tax-card {
+  position: relative;
+  width: min(330px, 90%);
+  padding: 28px;
+  border: 1px solid rgb(255 255 255 / 17%);
+  border-radius: 14px;
+  color: #fff;
+  background: linear-gradient(145deg, #153A56, #0A2239);
+  box-shadow: 0 30px 70px rgb(0 0 0 / 24%);
+  transform: rotate(3deg);
+  transition: transform .4s ease;
+}
+
+.nava-services-page .nsp-illustration--tax:hover .nsp-tax-card {
+  transform: rotate(0) translateY(-5px);
+}
+
+.nava-services-page .nsp-tax-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nava-services-page .nsp-tax-card__symbol {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--nsp-navy);
+  background: var(--nsp-green);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.nava-services-page .nsp-tax-card__tag {
+  color: #B6C5D2;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.nava-services-page .nsp-tax-card__title {
+  margin-top: 28px;
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -.7px;
+}
+
+.nava-services-page .nsp-tax-card__line {
+  width: 90%;
+  height: 7px;
+  margin-top: 18px;
+  border-radius: 5px;
+  background: rgb(255 255 255 / 15%);
+}
+
+.nava-services-page .nsp-tax-card__line--short {
+  width: 60%;
+  margin-top: 9px;
+}
+
+.nava-services-page .nsp-tax-card__steps {
+  display: grid;
+  gap: 11px;
+  margin-top: 27px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.nava-services-page .nsp-tax-card__steps span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #D8E1E9;
+  font-size: 11px;
+}
+
+.nava-services-page .nsp-tax-card__steps i {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 50%;
+  color: #071B2E;
+  background: var(--nsp-green);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.nava-services-page .nsp-tax-stamp {
+  position: absolute;
+  right: 0;
+  bottom: 37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 20px;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 10px;
+  background: #12334E;
+  box-shadow: 0 15px 35px rgb(0 0 0 / 20%);
+  transform: rotate(-5deg);
+}
+
+.nava-services-page .nsp-tax-stamp > span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 7px;
+  place-items: center;
+  border-radius: 50%;
+  color: #061A2F;
+  background: var(--nsp-yellow);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.nava-services-page .nsp-tax-stamp strong {
+  font-size: 11px;
+}
+
+.nava-services-page .nsp-tax-stamp small {
+  margin-top: 4px;
+  color: #AFC1D0;
+  font-size: 9px;
+}
+
+.nava-services-page .nsp-tax-planning {
+  display: flex;
+  gap: 14px;
+  margin: 5px 0 27px;
+  padding: 17px;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 9px;
+  background: rgb(255 255 255 / 4%);
+}
+
+.nava-services-page .nsp-tax-planning__icon {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 7px;
+  color: #071B2E;
+  background: var(--nsp-yellow);
+  font-size: 19px;
+}
+
+.nava-services-page .nsp-tax-planning h3 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.nava-services-page .nsp-tax-planning p {
+  margin: 0;
+  color: #B9C8D5;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* ADVISORY ILLUSTRATION */
+
+.nava-services-page .nsp-illustration--advisory {
+  overflow: hidden;
+}
+
+.nava-services-page .nsp-advisory-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.nava-services-page .nsp-advisory-circle--one {
+  width: 370px;
+  height: 370px;
+  background: #E5EFDF;
+}
+
+.nava-services-page .nsp-advisory-circle--two {
+  width: 285px;
+  height: 285px;
+  border: 1px solid #B7D5A8;
+}
+
+.nava-services-page .nsp-advisory-board {
+  position: relative;
+  width: min(340px, 90%);
+  padding: 27px;
+  border: 1px solid #E5EAF0;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 30px 65px rgb(6 26 47 / 13%);
+  transform: rotate(-2deg);
+  transition: transform .4s ease;
+}
+
+.nava-services-page .nsp-illustration--advisory:hover .nsp-advisory-board {
+  transform: rotate(0) translateY(-5px);
+}
+
+.nava-services-page .nsp-advisory-board__label {
+  color: #78906E;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.nava-services-page .nsp-advisory-board h3 {
+  margin: 15px 0 23px;
+  color: var(--nsp-navy);
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -.7px;
+}
+
+.nava-services-page .nsp-advisory-board__metric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 13px;
+  padding: 12px;
+  border: 1px solid #E8EDF1;
+  border-radius: 8px;
+}
+
+.nava-services-page .nsp-advisory-board__icon {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 8px;
+  color: #2E6C26;
+  background: #E5F2DE;
+  font-size: 18px;
+}
+
+.nava-services-page .nsp-advisory-board__icon--yellow {
+  color: #765300;
+  background: #FFF2CC;
+}
+
+.nava-services-page .nsp-advisory-board__metric span,
+.nava-services-page .nsp-advisory-board__metric strong {
+  display: block;
+}
+
+.nava-services-page .nsp-advisory-board__metric span {
+  margin-bottom: 4px;
+  color: #7B8B9A;
+  font-size: 9px;
+}
+
+.nava-services-page .nsp-advisory-board__metric strong {
+  color: var(--nsp-navy);
+  font-size: 11px;
+}
+
+/* PROCESS */
+
+.nava-services-page .nsp-process {
+  background: #fff;
+}
+
+.nava-services-page .nsp-section-heading {
+  max-width: 720px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.nava-services-page .nsp-section-heading .nsp-eyebrow {
+  justify-content: center;
+}
+
+.nava-services-page .nsp-section-heading h2 {
+  margin-top: 20px;
+}
+
+.nava-services-page .nsp-section-heading p {
+  max-width: 570px;
+  margin: 20px auto 0;
+  color: #667789;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.nava-services-page .nsp-process__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.nava-services-page .nsp-process-card {
+  position: relative;
+  min-height: 255px;
+  padding: 31px;
+  overflow: hidden;
+  border: 1px solid #E5EBF0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgb(6 26 47 / 3%);
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.nava-services-page .nsp-process-card:hover {
+  transform: translateY(-7px);
+  border-color: #B9D8AC;
+  box-shadow: 0 20px 45px rgb(6 26 47 / 8%);
+}
+
+.nava-services-page .nsp-process-card__number {
+  position: absolute;
+  top: 20px;
+  right: 23px;
+  color: #E6EBEF;
+  font-size: 37px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.nava-services-page .nsp-process-card__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 10px;
+  color: #2D6925;
+  background: #E6F2E0;
+  font-size: 24px;
+}
+
+.nava-services-page .nsp-process-card:nth-child(2) .nsp-process-card__icon {
+  color: #795900;
+  background: #FFF1C9;
+}
+
+.nava-services-page .nsp-process-card h3 {
+  margin: 25px 0 10px;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.nava-services-page .nsp-process-card p {
+  margin: 0;
+  color: #68798A;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* FINAL CTA */
+
+.nava-services-page .nsp-final-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(115deg, #061A2F, #0A2B46);
+}
+
+.nava-services-page .nsp-final-cta__glow {
+  position: absolute;
+  z-index: -1;
+  top: -260px;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgb(105 173 73 / 13%);
+  filter: blur(90px);
+}
+
+.nava-services-page .nsp-final-cta__inner {
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.nava-services-page .nsp-final-cta__content {
+  max-width: 700px;
+}
+
+.nava-services-page .nsp-final-cta h2 {
+  margin: 22px 0 17px;
+  color: #fff;
+  font-size: clamp(35px, 4.3vw, 54px);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.nava-services-page .nsp-final-cta h2 span {
+  display: block;
+  color: var(--nsp-green);
+}
+
+.nava-services-page .nsp-final-cta p {
+  max-width: 560px;
+  margin: 0;
+  color: #C0CEDA;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.nava-services-page .nsp-final-cta .nsp-button {
+  margin-top: 27px;
+}
+
+.nava-services-page .nsp-final-cta__mark {
+  position: relative;
+  display: grid;
+  width: 190px;
+  height: 190px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 50%;
+  color: rgb(255 255 255 / 85%);
+  font-size: 100px;
+  font-weight: 750;
+}
+
+.nava-services-page .nsp-final-cta__mark::before,
+.nava-services-page .nsp-final-cta__mark::after {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border: 1px solid rgb(105 173 73 / 32%);
+  border-radius: 50%;
+}
+
+.nava-services-page .nsp-final-cta__mark::after {
+  inset: -13px;
+  border-color: rgb(255 255 255 / 8%);
+}
+
+.nava-services-page .nsp-final-cta__mark > i {
+  position: absolute;
+  right: 13px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--nsp-green);
+}
+
+.nava-services-page .nsp-final-cta__mark > i:nth-of-type(1) {
+  top: 27px;
+}
+
+.nava-services-page .nsp-final-cta__mark > i:nth-of-type(2) {
+  right: 0;
+  bottom: 47px;
+  background: var(--nsp-yellow);
+}
+
+.nava-services-page .nsp-final-cta__mark > i:nth-of-type(3) {
+  right: auto;
+  bottom: 20px;
+  left: 38px;
+  width: 6px;
+  height: 6px;
+}
+
+.nava-services-page .nsp-final-cta__tagline {
+  padding: 18px 24px;
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  color: #A8B8C7;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .4px;
+}
+
+/* ANIMATIONS */
+
+@keyframes nsp-card-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes nsp-note-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
+}
+
+@keyframes nsp-morph {
+  0%, 100% {
+    border-radius: 35% 65% 60% 40% / 44% 39% 61% 56%;
+    transform: rotate(0);
+  }
+  50% {
+    border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%;
+    transform: rotate(7deg);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .nava-services-page .nsp-hero__layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .nava-services-page .nsp-hero h1 {
+    font-size: clamp(39px, 5vw, 54px);
+  }
+
+  .nava-services-page .nsp-floating-note--top {
+    right: -5px;
+  }
+
+  .nava-services-page .nsp-floating-note--bottom {
+    left: -5px;
+  }
+
+  .nava-services-page .nsp-service__layout,
+  .nava-services-page .nsp-service__layout--reverse {
+    gap: 45px;
+  }
+
+  .nava-services-page .nsp-service__content h2 {
+    font-size: 37px;
+  }
+
+  .nava-services-page .nsp-illustration {
+    min-height: 390px;
+  }
+}
+
+@media (max-width: 760px) {
+  .nava-services-page .nsp-container {
+    width: min(100% - 36px, 600px);
+  }
+
+  .nava-services-page .nsp-section {
+    padding: 70px 0;
+  }
+
+  .nava-services-page .nsp-hero__layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 70px;
+    padding-bottom: 55px;
+  }
+
+  .nava-services-page .nsp-hero h1 {
+    max-width: 550px;
+    font-size: clamp(42px, 10vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .nava-services-page .nsp-hero__description {
+    font-size: 14px;
+  }
+
+  .nava-services-page .nsp-hero-visual {
+    width: min(100%, 530px);
+    margin: 0 auto;
+    padding: 30px 10px;
+  }
+
+  .nava-services-page .nsp-visual-orbit--outer {
+    width: min(470px, 100%);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .nava-services-page .nsp-visual-orbit--inner {
+    width: 78%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .nava-services-page .nsp-finance-card {
+    padding: 20px;
+  }
+
+  .nava-services-page .nsp-floating-note--top {
+    right: 0;
+  }
+
+  .nava-services-page .nsp-floating-note--bottom {
+    left: 0;
+  }
+
+  .nava-services-page .nsp-hero__bottom {
+    gap: 12px;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .nava-services-page .nsp-hero__bottom-line {
+    width: 17px;
+  }
+
+  .nava-services-page .nsp-intro__layout {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+
+  .nava-services-page .nsp-intro h2,
+  .nava-services-page .nsp-section-heading h2 {
+    font-size: 36px;
+  }
+
+  .nava-services-page .nsp-service {
+    padding: 72px 0;
+  }
+
+  .nava-services-page .nsp-service__layout,
+  .nava-services-page .nsp-service__layout--reverse {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .nava-services-page .nsp-service__layout--reverse .nsp-service__visual,
+  .nava-services-page .nsp-service__layout--reverse .nsp-service__content {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .nava-services-page .nsp-service__layout--reverse .nsp-service__visual {
+    grid-row: 1;
+  }
+
+  .nava-services-page .nsp-service__layout--reverse .nsp-service__content {
+    grid-row: 2;
+  }
+
+  .nava-services-page .nsp-service__content h2 {
+    font-size: 37px;
+  }
+
+  .nava-services-page .nsp-illustration {
+    min-height: 370px;
+  }
+
+  .nava-services-page .nsp-process__grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .nava-services-page .nsp-process-card {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  .nava-services-page .nsp-process-card h3 {
+    margin-top: 20px;
+  }
+
+  .nava-services-page .nsp-section-heading {
+    margin-bottom: 35px;
+  }
+
+  .nava-services-page .nsp-final-cta__inner {
+    min-height: auto;
+    padding-top: 70px;
+    padding-bottom: 65px;
+  }
+
+  .nava-services-page .nsp-final-cta__mark {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .nava-services-page .nsp-container {
+    width: calc(100% - 32px);
+  }
+
+  .nava-services-page .nsp-hero h1 {
+    font-size: 41px;
+  }
+
+  .nava-services-page .nsp-hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nava-services-page .nsp-finance-card {
+    padding: 16px;
+  }
+
+  .nava-services-page .nsp-finance-card__top h2 {
+    font-size: 16px;
+  }
+
+  .nava-services-page .nsp-finance-card__status {
+    font-size: 8px;
+  }
+
+  .nava-services-page .nsp-finance-card__metric strong {
+    font-size: 17px;
+  }
+
+  .nava-services-page .nsp-chart {
+    height: 130px;
+  }
+
+  .nava-services-page .nsp-finance-card__bottom {
+    gap: 9px;
+  }
+
+  .nava-services-page .nsp-floating-note {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .nava-services-page .nsp-floating-note strong {
+    font-size: 9px;
+  }
+
+  .nava-services-page .nsp-floating-note div > span {
+    font-size: 8px;
+  }
+
+  .nava-services-page .nsp-illustration {
+    min-height: 330px;
+  }
+
+  .nava-services-page .nsp-document,
+  .nava-services-page .nsp-advisory-board,
+  .nava-services-page .nsp-tax-card {
+    padding: 20px;
+  }
+
+  .nava-services-page .nsp-illustration__badge {
+    right: -3px;
+    bottom: 24px;
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .nava-services-page .nsp-tax-stamp {
+    right: -2px;
+    bottom: 23px;
+    padding: 12px;
+  }
+
+  .nava-services-page .nsp-service__content h2 {
+    font-size: 33px;
+  }
+
+  .nava-services-page .nsp-button {
+    width: 100%;
+    padding-inline: 14px;
+    font-size: 12px;
+  }
+
+  .nava-services-page .nsp-final-cta h2 {
+    font-size: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nava-services-page *,
+  .nava-services-page *::before,
+  .nava-services-page *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+
+  .nava-services-page .nsp-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

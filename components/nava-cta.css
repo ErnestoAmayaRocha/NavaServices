@@ -1,0 +1,547 @@
+
+/* =========================================
+   NAVA CTA - FINAL CALL TO ACTION
+========================================= */
+
+.nava-cta {
+  --cta-navy: #061A2F;
+  --cta-green: #69AD49;
+  --cta-yellow: #F5A900;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 95px 24px 36px;
+  overflow: hidden;
+  color: #FFFFFF;
+  background: linear-gradient(
+    125deg,
+    #061A2F 0%,
+    #0B2944 55%,
+    #061A2F 100%
+  );
+}
+
+.nava-cta *,
+.nava-cta *::before,
+.nava-cta *::after {
+  box-sizing: border-box;
+}
+
+.nava-cta__container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* Background decoration */
+
+.nava-cta__background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.nava-cta__glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(75px);
+  animation: navaCtaGlow 13s ease-in-out infinite alternate;
+}
+
+.nava-cta__glow--one {
+  top: -250px;
+  left: -120px;
+  background: radial-gradient(
+    circle,
+    rgba(105, 173, 73, 0.24),
+    transparent 70%
+  );
+}
+
+.nava-cta__glow--two {
+  right: -180px;
+  bottom: -280px;
+  background: radial-gradient(
+    circle,
+    rgba(245, 169, 0, 0.15),
+    transparent 70%
+  );
+  animation-delay: -6s;
+}
+
+.nava-cta__pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 60px 60px;
+}
+
+.nava-cta__circle {
+  position: absolute;
+  top: 10%;
+  right: 12%;
+  width: 230px;
+  height: 230px;
+  border: 1px solid rgba(105, 173, 73, 0.2);
+  border-radius: 50%;
+  animation: navaCtaFloat 9s ease-in-out infinite;
+}
+
+/* Main content */
+
+.nava-cta__content {
+  position: relative;
+  z-index: 2;
+}
+
+.nava-cta__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  color: #A6D58C;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.nava-cta__eyebrow::before {
+  width: 25px;
+  height: 2px;
+  background: var(--cta-yellow);
+  content: "";
+}
+
+.nava-cta__content h2 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -1.5px;
+}
+
+.nava-cta__content h2 span {
+  display: block;
+  color: #A6D58C;
+}
+
+.nava-cta__description {
+  max-width: 500px;
+  margin: 22px 0 28px;
+  color: #C2CFDA;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* Main button */
+
+.nava-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 54px;
+  padding: 0 25px;
+  color: #061A2F;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.nava-cta__button span {
+  color: #4D9136;
+  font-size: 18px;
+  transition: transform 200ms ease;
+}
+
+.nava-cta__button:hover {
+  color: #FFFFFF;
+  background: var(--cta-green);
+  border-color: var(--cta-green);
+  box-shadow: 0 12px 30px rgba(105, 173, 73, 0.2);
+  transform: translateY(-3px);
+}
+
+.nava-cta__button:hover span {
+  color: #FFFFFF;
+  transform: translate(3px, -3px);
+}
+
+.nava-cta__trust {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 25px;
+  color: #AEBECD;
+  font-size: 12px;
+}
+
+.nava-cta__trust-line {
+  width: 25px;
+  height: 1px;
+  background: var(--cta-yellow);
+}
+
+/* Decorative illustration */
+
+.nava-cta__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+}
+
+.nava-cta__visual-ring {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.nava-cta__visual-ring--outer {
+  width: 310px;
+  height: 310px;
+  animation: navaCtaRotate 35s linear infinite;
+}
+
+.nava-cta__visual-ring--inner {
+  width: 230px;
+  height: 230px;
+  border-color: rgba(105, 173, 73, 0.3);
+  animation: navaCtaRotate 25s linear infinite reverse;
+}
+
+.nava-cta__visual-center {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 155px;
+  height: 155px;
+  color: #A6D58C;
+  background: linear-gradient(
+    145deg,
+    rgba(105, 173, 73, 0.18),
+    rgba(255, 255, 255, 0.035)
+  );
+  border: 1px solid rgba(105, 173, 73, 0.4);
+  border-radius: 28px;
+  box-shadow:
+    0 0 70px rgba(105, 173, 73, 0.09),
+    inset 0 0 35px rgba(255, 255, 255, 0.025);
+  transform: rotate(-5deg);
+  animation: navaCtaCardFloat 5s ease-in-out infinite;
+}
+
+.nava-cta__visual-center svg {
+  width: 70px;
+  height: 70px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Floating labels */
+
+.nava-cta__floating-label {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 16px;
+  color: #FFFFFF;
+  background: rgba(14, 43, 66, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.nava-cta__floating-label--top {
+  top: 48px;
+  right: 0;
+  animation: navaCtaFloat 5s ease-in-out infinite;
+}
+
+.nava-cta__floating-label--bottom {
+  bottom: 45px;
+  left: 0;
+  animation: navaCtaFloat 6s ease-in-out infinite reverse;
+}
+
+.nava-cta__status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  background: var(--cta-green);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(105, 173, 73, 0.65);
+}
+
+.nava-cta__mini-icon {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  color: #061A2F;
+  background: var(--cta-yellow);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Brand tagline */
+
+.nava-cta__tagline {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  text-align: center;
+}
+
+.nava-cta__tagline p {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.4px;
+}
+
+.nava-cta__tagline-line {
+  width: 35px;
+  height: 1px;
+  background: var(--cta-yellow);
+}
+
+/* Scroll reveal */
+
+.nava-cta__animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.nava-cta__animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background animations */
+
+@keyframes navaCtaGlow {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(35px, 25px) scale(1.12);
+  }
+}
+
+@keyframes navaCtaFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes navaCtaRotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes navaCtaCardFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .nava-cta {
+    padding: 80px 22px 30px;
+  }
+
+  .nava-cta__container {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+    gap: 20px;
+  }
+
+  .nava-cta__visual {
+    min-height: 300px;
+  }
+
+  .nava-cta__visual-ring--outer {
+    width: 250px;
+    height: 250px;
+  }
+
+  .nava-cta__visual-ring--inner {
+    width: 190px;
+    height: 190px;
+  }
+
+  .nava-cta__visual-center {
+    width: 125px;
+    height: 125px;
+  }
+
+  .nava-cta__floating-label {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .nava-cta {
+    padding: 65px 20px 25px;
+  }
+
+  .nava-cta__container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .nava-cta__content h2 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .nava-cta__description {
+    font-size: 14px;
+  }
+
+  .nava-cta__button {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .nava-cta__visual {
+    min-height: 300px;
+    margin-top: 5px;
+  }
+
+  .nava-cta__visual-ring--outer {
+    width: 245px;
+    height: 245px;
+  }
+
+  .nava-cta__visual-ring--inner {
+    width: 180px;
+    height: 180px;
+  }
+
+  .nava-cta__visual-center {
+    width: 120px;
+    height: 120px;
+    border-radius: 22px;
+  }
+
+  .nava-cta__floating-label--top {
+    top: 25px;
+    right: 0;
+  }
+
+  .nava-cta__floating-label--bottom {
+    bottom: 22px;
+    left: 0;
+  }
+
+  .nava-cta__tagline {
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 22px;
+  }
+
+  .nava-cta__tagline p {
+    font-size: 12px;
+  }
+
+  .nava-cta__tagline-line {
+    width: 18px;
+    flex-shrink: 0;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .nava-cta__glow,
+  .nava-cta__circle,
+  .nava-cta__visual-ring,
+  .nava-cta__visual-center,
+  .nava-cta__floating-label {
+    animation: none !important;
+  }
+
+  .nava-cta__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .nava-cta__button,
+  .nava-cta__button span {
+    transition: none !important;
+  }
+}

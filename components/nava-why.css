@@ -1,0 +1,421 @@
+
+/* =========================================
+   NAVA WHY - SECTION
+========================================= */
+
+.nava-why {
+  --why-navy: #061A2F;
+  --why-green: #69AD49;
+  --why-yellow: #F5A900;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 100px 24px;
+  overflow: hidden;
+  color: var(--why-navy);
+  background:
+    radial-gradient(
+      ellipse at 0% 20%,
+      rgba(105, 173, 73, 0.08),
+      transparent 35%
+    ),
+    #FFFFFF;
+}
+
+.nava-why *,
+.nava-why *::before,
+.nava-why *::after {
+  box-sizing: border-box;
+}
+
+.nava-why__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.nava-why__heading {
+  max-width: 800px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.nava-why__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #4D9136;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.nava-why__eyebrow::before,
+.nava-why__eyebrow::after {
+  width: 22px;
+  height: 2px;
+  background: var(--why-yellow);
+  content: "";
+}
+
+.nava-why__heading h2 {
+  margin: 0;
+  color: var(--why-navy);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 750;
+  line-height: 1.17;
+  letter-spacing: -1.4px;
+}
+
+.nava-why__heading h2 span {
+  display: block;
+  color: #4D9136;
+}
+
+.nava-why__heading > p {
+  max-width: 660px;
+  margin: 20px auto 0;
+  color: #667487;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Experience highlight */
+
+.nava-why__experience {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 34px;
+  margin-bottom: 32px;
+  padding: 36px 42px;
+  color: #FFFFFF;
+  background: linear-gradient(120deg, #061A2F, #103552);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(6, 26, 47, 0.12);
+}
+
+.nava-why__experience-number {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 3px;
+  padding-right: 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.nava-why__plus {
+  color: var(--why-yellow);
+  font-size: 32px;
+  font-weight: 750;
+}
+
+.nava-why__count {
+  color: #FFFFFF;
+  font-size: 70px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.nava-why__years {
+  flex-basis: 100%;
+  margin-top: 12px;
+  color: #B8C8D7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.nava-why__experience-label {
+  color: #A6D58C;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.nava-why__experience-copy h3 {
+  margin: 10px 0 10px;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.nava-why__experience-copy p {
+  max-width: 620px;
+  margin: 0;
+  color: #C2CFDA;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* Benefit cards */
+
+.nava-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.nava-why__card {
+  position: relative;
+  min-width: 0;
+  padding: 27px 23px;
+  background: #F7F9FB;
+  border: 1px solid #E7ECF1;
+  border-radius: 11px;
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease,
+    background 250ms ease;
+}
+
+.nava-why__card:hover {
+  transform: translateY(-6px);
+  background: #FFFFFF;
+  border-color: rgba(105, 173, 73, 0.6);
+  box-shadow: 0 16px 35px rgba(6, 26, 47, 0.08);
+}
+
+.nava-why__icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 23px;
+  color: #4D9136;
+  background: #EAF4E5;
+  border-radius: 10px;
+  transition:
+    color 250ms ease,
+    background 250ms ease,
+    transform 250ms ease;
+}
+
+.nava-why__icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nava-why__card:hover .nava-why__icon {
+  color: #FFFFFF;
+  background: var(--why-green);
+  transform: scale(1.06);
+}
+
+.nava-why__card-number {
+  position: absolute;
+  top: 29px;
+  right: 22px;
+  color: #A8B4C0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.nava-why__card h3 {
+  margin: 0 0 12px;
+  color: var(--why-navy);
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.nava-why__card p {
+  margin: 0;
+  color: #667487;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* Footer */
+
+.nava-why__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 35px;
+  padding-top: 27px;
+  border-top: 1px solid #E6EBF0;
+}
+
+.nava-why__footer > p {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 0;
+  color: #506175;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.nava-why__footer-accent {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  background: var(--why-yellow);
+  border-radius: 50%;
+}
+
+.nava-why__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--why-navy);
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.nava-why__link span {
+  color: var(--why-green);
+  font-size: 20px;
+  transition: transform 200ms ease;
+}
+
+.nava-why__link:hover {
+  color: #4D9136;
+}
+
+.nava-why__link:hover span {
+  transform: translateX(5px);
+}
+
+/* Scroll animation */
+
+.nava-why__animate {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.nava-why__animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nava-why__card:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.nava-why__card:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.nava-why__card:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .nava-why {
+    padding: 80px 22px;
+  }
+
+  .nava-why__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nava-why__experience {
+    grid-template-columns: 180px 1fr;
+    padding: 30px;
+  }
+
+  .nava-why__count {
+    font-size: 60px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .nava-why {
+    padding: 64px 18px;
+  }
+
+  .nava-why__heading {
+    margin-bottom: 35px;
+  }
+
+  .nava-why__heading h2 {
+    font-size: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .nava-why__heading > p {
+    font-size: 14px;
+  }
+
+  .nava-why__experience {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 27px 22px;
+  }
+
+  .nava-why__experience-number {
+    padding: 0 0 23px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .nava-why__count {
+    font-size: 64px;
+  }
+
+  .nava-why__experience-copy h3 {
+    font-size: 21px;
+  }
+
+  .nava-why__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .nava-why__card {
+    padding: 24px;
+  }
+
+  .nava-why__card:nth-child(2),
+  .nava-why__card:nth-child(3),
+  .nava-why__card:nth-child(4) {
+    transition-delay: 0ms;
+  }
+
+  .nava-why__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .nava-why__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .nava-why__card,
+  .nava-why__icon,
+  .nava-why__link span {
+    transition: none !important;
+  }
+}

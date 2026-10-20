@@ -1,0 +1,630 @@
+
+/* =========================================
+   NAVA SERVICES - SECTION
+========================================= */
+
+.nava-services {
+  --services-navy: #061A2F;
+  --services-green: #69AD49;
+  --services-yellow: #F5A900;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 100px 24px;
+  overflow: hidden;
+  color: #FFFFFF;
+  background: linear-gradient(
+    135deg,
+    #061A2F 0%,
+    #0B2944 55%,
+    #061A2F 100%
+  );
+}
+
+.nava-services *,
+.nava-services *::before,
+.nava-services *::after {
+  box-sizing: border-box;
+}
+
+.nava-services__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.nava-services__background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.nava-services__glow {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  filter: blur(75px);
+  opacity: 0.55;
+  animation: navaServicesGlow 14s ease-in-out infinite alternate;
+}
+
+.nava-services__glow--one {
+  top: -250px;
+  right: -170px;
+  background: radial-gradient(
+    circle,
+    rgba(105, 173, 73, 0.32),
+    transparent 70%
+  );
+}
+
+.nava-services__glow--two {
+  bottom: -280px;
+  left: -180px;
+  background: radial-gradient(
+    circle,
+    rgba(245, 169, 0, 0.17),
+    transparent 70%
+  );
+  animation-delay: -7s;
+}
+
+.nava-services__grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 60px 60px;
+  opacity: 0.65;
+}
+
+.nava-services__orb {
+  position: absolute;
+  top: 13%;
+  right: 8%;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(105, 173, 73, 0.24);
+  border-radius: 50%;
+  animation: navaServicesOrb 10s ease-in-out infinite;
+}
+
+.nava-services__orb::before,
+.nava-services__orb::after {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+  content: "";
+}
+
+.nava-services__orb::before {
+  inset: 25px;
+}
+
+.nava-services__orb::after {
+  inset: 52px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.nava-services__heading {
+  max-width: 760px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.nava-services__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #A6D58C;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.nava-services__eyebrow::before,
+.nava-services__eyebrow::after {
+  width: 22px;
+  height: 2px;
+  background: var(--services-yellow);
+  content: "";
+}
+
+.nava-services__heading h2 {
+  margin: 0;
+  color: #FFFFFF;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.nava-services__intro {
+  max-width: 700px;
+  margin: 22px auto 0;
+  color: #FFFFFF;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.nava-services__description {
+  max-width: 650px;
+  margin: 12px auto 0;
+  color: #B8C8D7;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Key message */
+
+.nava-services__statement {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 26px auto 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--services-green);
+  text-align: left;
+}
+
+.nava-services__statement span {
+  color: #C4D0DC;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.nava-services__statement strong {
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SERVICE CARDS
+========================================= */
+
+.nava-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.nava-services__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 32px 28px 28px;
+  overflow: hidden;
+  color: var(--services-navy);
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.13);
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease;
+}
+
+.nava-services__card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--services-green),
+    var(--services-yellow)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 350ms ease;
+  content: "";
+}
+
+.nava-services__card:hover::before,
+.nava-services__card--featured::before {
+  transform: scaleX(1);
+}
+
+.nava-services__card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(105, 173, 73, 0.7);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.24);
+}
+
+.nava-services__card--featured {
+  border-top: 3px solid var(--services-green);
+  padding-top: 30px;
+}
+
+/* Card icon and number */
+
+.nava-services__card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.nava-services__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  color: #4D9136;
+  background: #F0F7EC;
+  border-radius: 11px;
+  transition:
+    transform 300ms ease,
+    background 300ms ease,
+    color 300ms ease;
+}
+
+.nava-services__icon svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nava-services__card:hover .nava-services__icon {
+  color: #FFFFFF;
+  background: var(--services-green);
+  transform: rotate(-5deg) scale(1.07);
+}
+
+.nava-services__number {
+  color: #B7C2CE;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Card text */
+
+.nava-services__card h3 {
+  margin: 0 0 12px;
+  color: var(--services-navy);
+  font-size: 23px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.nava-services__tagline {
+  min-height: 52px;
+  margin: 0 0 22px;
+  color: #667487;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Service list */
+
+.nava-services__list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.nava-services__list li {
+  position: relative;
+  padding-left: 23px;
+  color: #34465A;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.nava-services__list li::before {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  color: #4D9136;
+  background: #F0F7EC;
+  border-radius: 50%;
+  content: "✓";
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* Card links */
+
+.nava-services__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 19px;
+  color: var(--services-navy);
+  border-top: 1px solid #E8EDF2;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.nava-services__link span {
+  color: var(--services-green);
+  font-size: 21px;
+  transition: transform 200ms ease;
+}
+
+.nava-services__link:hover {
+  color: #4D9136;
+}
+
+.nava-services__link:hover span {
+  transform: translateX(5px);
+}
+
+/* =========================================
+   BOTTOM CALL TO ACTION
+========================================= */
+
+.nava-services__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px 24px;
+  margin-top: 44px;
+  text-align: center;
+}
+
+.nava-services__bottom p {
+  margin: 0;
+  color: #CBD7E2;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.nava-services__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 20px;
+  color: var(--services-navy);
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.nava-services__cta:hover {
+  color: #FFFFFF;
+  background: var(--services-green);
+  border-color: var(--services-green);
+  transform: translateY(-2px);
+}
+
+.nava-services__cta span {
+  color: var(--services-yellow);
+  font-size: 16px;
+}
+
+/* =========================================
+   SCROLL REVEAL ANIMATION
+========================================= */
+
+.nava-services__animate {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.nava-services__animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nava-services__card:nth-child(2) {
+  transition-delay: 120ms;
+}
+
+.nava-services__card:nth-child(3) {
+  transition-delay: 240ms;
+}
+
+/* Background movement */
+
+@keyframes navaServicesGlow {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(35px, 25px, 0) scale(1.12);
+  }
+}
+
+@keyframes navaServicesOrb {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-22px) rotate(8deg);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .nava-services {
+    padding: 80px 22px;
+  }
+
+  .nava-services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .nava-services__card {
+    padding: 27px 23px 24px;
+  }
+
+  .nava-services__card--featured {
+    padding-top: 25px;
+  }
+
+  .nava-services__heading {
+    margin-bottom: 44px;
+  }
+
+  .nava-services__tagline {
+    min-height: 0;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .nava-services {
+    padding: 64px 18px;
+  }
+
+  .nava-services__heading {
+    margin-bottom: 34px;
+  }
+
+  .nava-services__heading h2 {
+    font-size: 32px;
+    letter-spacing: -0.8px;
+  }
+
+  .nava-services__intro {
+    font-size: 17px;
+  }
+
+  .nava-services__description {
+    font-size: 14px;
+  }
+
+  .nava-services__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .nava-services__card {
+    padding: 26px 23px 24px;
+  }
+
+  .nava-services__card--featured {
+    padding-top: 24px;
+  }
+
+  .nava-services__card h3 {
+    font-size: 22px;
+  }
+
+  .nava-services__bottom {
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .nava-services__glow {
+    width: 320px;
+    height: 320px;
+    filter: blur(55px);
+  }
+
+  .nava-services__orb {
+    top: 8%;
+    right: -55px;
+    width: 125px;
+    height: 125px;
+  }
+
+  .nava-services__grid-pattern {
+    background-size: 45px 45px;
+  }
+
+  .nava-services__card:nth-child(2),
+  .nava-services__card:nth-child(3) {
+    transition-delay: 0ms;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .nava-services__glow,
+  .nava-services__orb {
+    animation: none !important;
+  }
+
+  .nava-services__animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .nava-services__card,
+  .nava-services__icon,
+  .nava-services__card::before,
+  .nava-services__link span,
+  .nava-services__cta {
+    transition: none !important;
+  }
+}

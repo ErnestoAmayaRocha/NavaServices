@@ -1,4 +1,3 @@
-
 class NavaHeader extends HTMLElement {
   connectedCallback() {
     if (this.dataset.rendered === "true") return;
@@ -64,14 +63,14 @@ class NavaHeader extends HTMLElement {
       toggle.setAttribute("aria-expanded", String(isOpen));
       toggle.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
+        isOpen ? "Close navigation menu" : "Open navigation menu",
       );
     });
 
     // Marcar la página actual
     const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
 
-    this.querySelectorAll(".nava-nav__link, .nava-nav__cta").forEach(link => {
+    this.querySelectorAll(".nava-nav__link, .nava-nav__cta").forEach((link) => {
       const linkPath = new URL(link.href).pathname.replace(/\/+$/, "") || "/";
 
       const isHome =
