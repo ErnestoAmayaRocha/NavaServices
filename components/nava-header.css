@@ -267,3 +267,81 @@ nava-header {
     height: 42px;
   }
 }
+
+/* ================================
+   NAVA HEADER — LANGUAGE SELECTOR
+================================ */
+
+.nava-language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+/* Contenedor de GTranslate */
+.nava-language .gtranslate_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Selector principal */
+.nava-language .gt_switcher,
+.nava-language .gt_selector,
+.nava-language select {
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #252525 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  min-height: 40px;
+  padding: 8px 12px !important;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Hover */
+.nava-language .gt_switcher:hover,
+.nava-language .gt_selector:hover,
+.nava-language select:hover {
+  border-color: #FC7921 !important;
+  box-shadow: 0 3px 12px rgba(252, 121, 33, 0.12);
+}
+
+/* Focus accesible */
+.nava-language .gt_switcher:focus,
+.nava-language .gt_selector:focus,
+.nava-language select:focus {
+  border-color: #FC7921 !important;
+  box-shadow: 0 0 0 3px rgba(252, 121, 33, 0.15);
+}
+
+/* Opciones del selector nativo */
+.nava-language select option {
+  color: #252525;
+  background: #ffffff;
+  padding: 8px;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .nava-language {
+    margin: 12px 0 0;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .nava-language .gt_switcher,
+  .nava-language .gt_selector,
+  .nava-language select {
+    min-height: 42px;
+  }
+}
