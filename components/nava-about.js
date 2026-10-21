@@ -89,133 +89,133 @@ class NavaAbout extends HTMLElement {
         </div>
       </section>
 
-      <!-- LEADERSHIP -->
-      <section class="nava-about__leadership">
-        <div class="nava-about__container">
+      
+<!-- LEADERSHIP -->
+<section class="nava-about__leadership">
+  <div class="nava-about__container">
 
-          <div class="nava-about__section-heading nava-about__animate">
-            <span class="nava-about__eyebrow">OUR LEADERSHIP</span>
+    <div class="nava-about__section-heading nava-about__animate">
+      <span class="nava-about__eyebrow">OUR LEADERSHIP</span>
 
-            <h2>
-              Experience That
-              <span>Moves You Forward.</span>
-            </h2>
+      <h2>
+        Experience That
+        <span>Moves You Forward.</span>
+      </h2>
 
-            <p>
-              Meet the professionals dedicated to helping business owners
-              better understand their numbers and make informed decisions.
-            </p>
-          </div>
+      <p>
+        Meet the professionals dedicated to helping business owners
+        better understand their numbers and make informed decisions.
+      </p>
+    </div>
 
-          <div class="nava-about__leaders">
+    <div class="nava-about__leaders">
 
-            <!-- Laura Nava -->
-            <article class="nava-about__leader nava-about__animate">
-              <div class="nava-about__leader-accent"></div>
+      <!-- Laura Nava -->
+      <article class="nava-about__leader nava-about__animate">
+        <div class="nava-about__leader-accent"></div>
 
-              <div class="nava-about__leader-heading">
-                <div class="nava-about__leader-monogram" aria-hidden="true">
-                  LN
-                </div>
+        <div class="nava-about__leader-photo">
+          <img
+            src="/assets/img/laury.JPG"
+            alt="Laura Nava, CPA and Certified Tax Coach"
+            loading="lazy"
+          >
+          <div class="nava-about__leader-photo-overlay"></div>
 
-                <div>
-                  <span class="nava-about__leader-role">
-                    CPA · CTC
-                  </span>
-                  <h3>Laura Nava</h3>
-                  <p class="nava-about__leader-title">
-                    Certified Public Accountant
-                  </p>
-                </div>
-              </div>
-
-              <div class="nava-about__leader-body">
-                <p>
-                  Laura Nava is a Certified Public Accountant (CPA) and
-                  Certified Tax Coach (CTC) with The NAVA Group Co.
-                </p>
-
-                <p>
-                  She graduated Magna Cum Laude from the University of
-                  San Francisco and began her career at one of the largest
-                  public accounting firms in the United States.
-                </p>
-
-                <p>
-                  She later joined the family business and has dedicated
-                  her career to helping entrepreneurs strengthen their
-                  businesses through accounting, tax strategy, and advisory
-                  services.
-                </p>
-
-                <p>
-                  Laura also speaks nationally to tax and accounting
-                  professionals about accounting, taxes, and professional
-                  firm management.
-                </p>
-
-                <div class="nava-about__leader-quote">
-                  <span>HER APPROACH</span>
-                  <p>
-                    Help business owners understand their numbers and use
-                    that information to make better decisions.
-                  </p>
-                </div>
-              </div>
-            </article>
-
-            <!-- Antonio Nava -->
-            <article class="nava-about__leader nava-about__animate">
-              <div class="nava-about__leader-accent"></div>
-
-              <div class="nava-about__leader-heading">
-                <div class="nava-about__leader-monogram" aria-hidden="true">
-                  AN
-                </div>
-
-                <div>
-                  <span class="nava-about__leader-role">
-                    ENROLLED AGENT
-                  </span>
-                  <h3>Antonio Nava</h3>
-                  <p class="nava-about__leader-title">
-                    Entrepreneur, Speaker & Author
-                  </p>
-                </div>
-              </div>
-
-              <div class="nava-about__leader-body">
-                <p>
-                  Antonio Nava is an Enrolled Agent, entrepreneur, national
-                  speaker, and author of an international Amazon bestseller.
-                </p>
-
-                <p>
-                  With 33 years of experience representing taxpayers and
-                  running his own businesses, Antonio shares his knowledge
-                  with business owners, accountants, and tax preparers.
-                </p>
-
-                <p>
-                  His mission is to help them turn their experience and
-                  profession into a thriving, successful, and organized
-                  business that offers greater stability, freedom, and the
-                  opportunity to build a better future.
-                </p>
-
-                <div class="nava-about__leader-quote">
-                  <span>HIS MISSION</span>
-                  <p>
-                    Help professionals build successful businesses that
-                    create greater stability, freedom, and opportunity.
-                  </p>
-                </div>
-              </div>
-            </article>
-
+          <div class="nava-about__leader-photo-caption">
+            <span>CPA · CTC</span>
+            <h3>Laura Nava</h3>
+            <p>Certified Public Accountant</p>
           </div>
         </div>
-      </section>
+
+        <div class="nava-about__leader-body">
+          <p>
+            Laura Nava is a Certified Public Accountant (CPA) and
+            Certified Tax Coach (CTC) with The NAVA Group Co.
+          </p>
+
+          <p>
+            She graduated Magna Cum Laude from the University of
+            San Francisco and began her career at one of the largest
+            public accounting firms in the United States.
+          </p>
+
+          <p>
+            She later joined the family business and has dedicated
+            her career to helping entrepreneurs strengthen their
+            businesses through accounting, tax strategy, and advisory
+            services.
+          </p>
+
+          <p>
+            Laura also speaks nationally to tax and accounting
+            professionals about accounting, taxes, and professional
+            firm management.
+          </p>
+
+          <div class="nava-about__leader-quote">
+            <span>HER APPROACH</span>
+            <p>
+              Help business owners understand their numbers and use
+              that information to make better decisions.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Antonio Nava -->
+      <article class="nava-about__leader nava-about__animate">
+        <div class="nava-about__leader-accent"></div>
+
+        <div class="nava-about__leader-photo">
+          <img
+            src="/assets/img/ANTONIO.webp"
+            alt="Antonio Nava, Enrolled Agent, entrepreneur, speaker and author"
+            loading="lazy"
+          >
+          <div class="nava-about__leader-photo-overlay"></div>
+
+          <div class="nava-about__leader-photo-caption">
+            <span>ENROLLED AGENT</span>
+            <h3>Antonio Nava</h3>
+            <p>Entrepreneur, Speaker &amp; Author</p>
+          </div>
+        </div>
+
+        <div class="nava-about__leader-body">
+          <p>
+            Antonio Nava is an Enrolled Agent, entrepreneur, national
+            speaker, and author of an international Amazon bestseller.
+          </p>
+
+          <p>
+            With 33 years of experience representing taxpayers and
+            running his own businesses, Antonio shares his knowledge
+            with business owners, accountants, and tax preparers.
+          </p>
+
+          <p>
+            His mission is to help them turn their experience and
+            profession into a thriving, successful, and organized
+            business that offers greater stability, freedom, and the
+            opportunity to build a better future.
+          </p>
+
+          <div class="nava-about__leader-quote">
+            <span>HIS MISSION</span>
+            <p>
+              Help professionals build successful businesses that
+              create greater stability, freedom, and opportunity.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
       <!-- OUR VALUES -->
       <section class="nava-about__values">

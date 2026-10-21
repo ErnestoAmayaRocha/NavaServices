@@ -1,3 +1,4 @@
+
 class NavaHeader extends HTMLElement {
   connectedCallback() {
     if (this.dataset.rendered === "true") return;
@@ -8,12 +9,12 @@ class NavaHeader extends HTMLElement {
         <div class="nava-header__inner">
 
           <a class="nava-brand" href="/index.html" aria-label="NAVA Services Group">
-           <img
-  src="https://www.navaservices.com/assets/img/IMAGE-LOGO-NSG.webp"
-  alt="NAVA Services Group Logo"
-  width="170"
-  height="56"
->
+            <img
+              src="https://www.navaservices.com/assets/img/IMAGE-LOGO-NSG.webp"
+              alt="NAVA Services Group Logo"
+              width="170"
+              height="56"
+            >
           </a>
 
           <button
@@ -63,26 +64,74 @@ class NavaHeader extends HTMLElement {
       toggle.setAttribute("aria-expanded", String(isOpen));
       toggle.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
       );
     });
 
     // Marcar la página actual
-    const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+    const normalizePath = (path) =>
+      path.replace(/\/+$/, "") || "/";
 
-    this.querySelectorAll(".nava-nav__link, .nava-nav__cta").forEach((link) => {
-      const linkPath = new URL(link.href).pathname.replace(/\/+$/, "") || "/";
+    const currentPath = normalizePath(window.location.pathname);
+
+    this.querySelectorAll(
+      ".nava-nav__link, .nava-nav__cta"
+    ).forEach((link) => {
+      const linkPath = normalizePath(new URL(link.href).pathname);
 
       const isHome =
         link.dataset.page === "home" &&
-        (currentPath === "/" || currentPath.endsWith("/index.html"));
+        (
+          currentPath === "/" ||
+          currentPath.endsWith("/index.html")
+        );
 
       if (linkPath === currentPath || isHome) {
         link.classList.add("is-active");
         link.setAttribute("aria-current", "page");
       }
     });
+
+    // Corregir "Hogar" por "Inicio" en el enlace Home
+    this.fixHomeTranslation();
   }
+
+  
+fixHomeTranslation() {
+  const homeLink = this.querySelector('[data-page="home"]');
+  if (!homeLink) return;
+
+  const correctTranslation = () => {
+    // Obtener únicamente los nodos de texto del enlace
+    const walker = document.createTreeWalker(
+      homeLink,
+      NodeFilter.SHOW_TEXT
+    );
+
+    let node;
+
+    while ((node = walker.nextNode())) {
+      if (node.textContent.trim() === "Hogar") {
+        node.textContent = node.textContent.replace("Hogar", "Inicio");
+      }
+    }
+  };
+
+  correctTranslation();
+
+  const observer = new MutationObserver(() => {
+    correctTranslation();
+  });
+
+  observer.observe(homeLink, {
+    childList: true,
+    characterData: true,
+    subtree: true
+  });
+
+  this._homeTranslationObserver = observer;
+}
+
 }
 
 if (!customElements.get("nava-header")) {

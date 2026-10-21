@@ -728,3 +728,186 @@
     transition: none !important;
   }
 }
+
+
+/* ========================================
+   LEADERSHIP — LARGE PORTRAITS
+======================================== */
+
+.nava-about__leaders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;
+}
+
+.nava-about__leader {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(6, 26, 47, 0.09);
+  box-shadow: 0 15px 45px rgba(6, 26, 47, 0.07);
+}
+
+.nava-about__leader-accent {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #69AD49;
+}
+
+.nava-about__leader-photo {
+  position: relative;
+  width: 100%;
+  height: 608px;
+  overflow: hidden;
+  background: #061A2F;
+}
+
+.nava-about__leader-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.6s ease;
+}
+
+.nava-about__leader:hover .nava-about__leader-photo img {
+  transform: scale(1.035);
+}
+
+.nava-about__leader-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 26, 47, 0.96) 0%,
+    rgba(6, 26, 47, 0.58) 27%,
+    rgba(6, 26, 47, 0.08) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.nava-about__leader-photo-caption {
+  position: absolute;
+  right: 30px;
+  bottom: 28px;
+  left: 30px;
+  z-index: 1;
+  color: #ffffff;
+}
+
+.nava-about__leader-photo-caption > span {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #b7e59e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.nava-about__leader-photo-caption h3 {
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-size: clamp(27px, 3vw, 36px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.nava-about__leader-photo-caption p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.nava-about__leader-body {
+  padding: 30px;
+}
+
+.nava-about__leader-body > p {
+  margin: 0 0 17px;
+  color: #536170;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.nava-about__leader-quote {
+  margin-top: 26px;
+  padding: 22px 24px;
+  border-left: 3px solid #69AD49;
+  border-radius: 0 10px 10px 0;
+  background: #f4f7f2;
+}
+
+.nava-about__leader-quote > span {
+  display: block;
+  margin-bottom: 9px;
+  color: #477d32;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.nava-about__leader-quote p {
+  margin: 0;
+  color: #061A2F;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .nava-about__leaders {
+    gap: 22px;
+  }
+
+  .nava-about__leader-photo {
+    height: 360px;
+  }
+
+  .nava-about__leader-photo-caption {
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+  }
+
+  .nava-about__leader-body {
+    padding: 24px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .nava-about__leaders {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .nava-about__leader-photo {
+    height: 390px;
+  }
+
+  .nava-about__leader-photo-caption h3 {
+    font-size: 30px;
+  }
+
+  .nava-about__leader-body {
+    padding: 24px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nava-about__leader-photo img {
+    transition: none;
+  }
+}
+

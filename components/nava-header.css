@@ -206,7 +206,7 @@ nava-header {
 .nava-brand img {
   display: block;
   width: 170px;
-  height: 56px;
+  height: 100px;
   object-fit: contain;
   object-position: left center;
 }
