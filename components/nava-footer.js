@@ -20,7 +20,7 @@ class NavaFooter extends HTMLElement {
                 aria-label="NAVA Services Group Home"
               >
                 <img
-                  src="/assets/img/BLANCO-02.PNG"
+                  src="/assets/img/BLANCO-02.png"
                   alt="NAVA Services Group"
                   width="170"
                   height="56"

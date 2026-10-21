@@ -67,9 +67,7 @@ class NavaContact extends HTMLElement {
                   <span class="nct-message-card__prompt-icon">✳</span>
                   <div>
                     <strong>What does your business need?</strong>
-                    <p>
-                      Accounting. Taxes. Strategy.
-                    </p>
+                    <p>Accounting. Taxes. Strategy.</p>
                   </div>
                 </div>
 
@@ -165,153 +163,20 @@ class NavaContact extends HTMLElement {
               <span class="nct-form-panel__step">LET'S CONNECT</span>
               <h2>How can we help?</h2>
               <p>
-                Complete the form below to tell us about your needs.
-                Fields marked with * are required.
+                Tell us a little about your business and the services
+                you're looking for. Our team will use your information
+                to understand your inquiry.
               </p>
             </div>
 
-            <form class="nct-form" novalidate>
-              <div class="nct-form__grid">
-                <div class="nct-field">
-                  <label for="nct-name">Full name <span>*</span></label>
-                  <input
-                    id="nct-name"
-                    name="name"
-                    type="text"
-                    autocomplete="name"
-                    placeholder="Your full name"
-                    minlength="2"
-                    maxlength="120"
-                    required
-                  >
-                  <small class="nct-field__error" data-error="name"></small>
-                </div>
+            <div class="nct-bitrix-form"></div>
 
-                <div class="nct-field">
-                  <label for="nct-email">Business email <span>*</span></label>
-                  <input
-                    id="nct-email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    placeholder="you@company.com"
-                    maxlength="254"
-                    required
-                  >
-                  <small class="nct-field__error" data-error="email"></small>
-                </div>
-
-                <div class="nct-field">
-                  <label for="nct-phone">Phone number</label>
-                  <input
-                    id="nct-phone"
-                    name="phone"
-                    type="tel"
-                    autocomplete="tel"
-                    placeholder="Your phone number"
-                    maxlength="30"
-                  >
-                  <small class="nct-field__error" data-error="phone"></small>
-                </div>
-
-                <div class="nct-field">
-                  <label for="nct-company">Business name</label>
-                  <input
-                    id="nct-company"
-                    name="company"
-                    type="text"
-                    autocomplete="organization"
-                    placeholder="Your company"
-                    maxlength="160"
-                  >
-                </div>
-
-                <div class="nct-field nct-field--full">
-                  <label for="nct-service">What can we help you with? <span>*</span></label>
-                  <select id="nct-service" name="service" required>
-                    <option value="">Select a service</option>
-                    <option value="Accounting and monthly bookkeeping">
-                      Accounting & Monthly Bookkeeping
-                    </option>
-                    <option value="Business tax preparation">
-                      Business Tax Preparation
-                    </option>
-                    <option value="Individual tax preparation">
-                      Individual Tax Preparation
-                    </option>
-                    <option value="Tax planning and estimated payments">
-                      Tax Planning & Estimated Payments
-                    </option>
-                    <option value="Business financial advisory">
-                      Business Financial Advisory
-                    </option>
-                    <option value="Multiple services">
-                      Multiple Services
-                    </option>
-                    <option value="Other or not sure yet">
-                      Other / Not Sure Yet
-                    </option>
-                  </select>
-                  <small class="nct-field__error" data-error="service"></small>
-                </div>
-
-                <div class="nct-field nct-field--full">
-                  <label for="nct-message">Tell us about your needs <span>*</span></label>
-                  <textarea
-                    id="nct-message"
-                    name="message"
-                    rows="5"
-                    minlength="10"
-                    maxlength="3000"
-                    placeholder="What would you like help with?"
-                    required
-                  ></textarea>
-                  <div class="nct-field__meta">
-                    <small class="nct-field__error" data-error="message"></small>
-                    <small class="nct-char-count">0 / 3000</small>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Honeypot field for basic bot filtering -->
-              <div class="nct-honeypot" aria-hidden="true">
-                <label for="nct-website">Leave this field empty</label>
-                <input
-                  id="nct-website"
-                  name="website"
-                  type="text"
-                  tabindex="-1"
-                  autocomplete="off"
-                >
-              </div>
-
-              <div class="nct-form__privacy">
-                <span class="nct-form__privacy-icon">✓</span>
-                <p>
-                  Please do not include Social Security numbers,
-                  tax identification numbers, account numbers,
-                  passwords, or other sensitive financial information.
-                </p>
-              </div>
-
-              <div
-                class="nct-form__status"
-                role="status"
-                aria-live="polite"
-                hidden
-              ></div>
-
-              <button class="nct-submit" type="submit">
-                <span class="nct-submit__label">Submit Inquiry</span>
-                <span class="nct-submit__arrow" aria-hidden="true">↗</span>
-              </button>
-
-              <p class="nct-form__disclaimer">
-                Submitting this form does not establish an accountant-client
-                relationship or guarantee acceptance of your request.
-              </p>
-            </form>
+            <p class="nct-form__disclaimer">
+              Submitting this form does not establish an accountant-client
+              relationship or guarantee acceptance of your request.
+            </p>
           </div>
+
         </div>
       </section>
 
@@ -334,164 +199,37 @@ class NavaContact extends HTMLElement {
       </section>
     `;
 
-    this.setupForm();
+    this.mountBitrixForm();
     this.setupRevealAnimations();
   }
 
-  setupForm() {
-    const form = this.querySelector(".nct-form");
-    const message = this.querySelector("#nct-message");
-    const charCount = this.querySelector(".nct-char-count");
-    const status = this.querySelector(".nct-form__status");
+  mountBitrixForm() {
+    const container = this.querySelector(".nct-bitrix-form");
 
-    // Keep this false until a real, secured CRM endpoint is configured.
-    const CRM_ENDPOINT = "";
+    if (!container || container.dataset.loaded === "true") return;
 
-    message.addEventListener("input", () => {
-      charCount.textContent = `${message.value.length} / 3000`;
-    });
+    container.dataset.loaded = "true";
 
-    form.querySelectorAll("input, select, textarea").forEach((field) => {
-      field.addEventListener("input", () => {
-        const error = this.querySelector(
-          `[data-error="${field.name}"]`
-        );
+    const embedScript = document.createElement("script");
 
-        if (error) error.textContent = "";
+    embedScript.setAttribute("data-b24-form", "inline/63/sg2p8b");
+    embedScript.setAttribute(
+      "data-b24-form-telemetry-sign",
+      "v1:63:site.7349b8c5a8ffa9e43cdfd32e00bb166813240dbd4a3d948aa386e579b326ccd8"
+    );
+    embedScript.setAttribute("data-skip-moving", "true");
 
-        field.removeAttribute("aria-invalid");
-      });
+    embedScript.textContent = `
+      (function(w,d,u){
+        var s=d.createElement('script');
+        s.async=true;
+        s.src=u+'?'+(Date.now()/180000|0);
+        var h=d.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s,h);
+      })(window,document,'https://cdn.bitrix24.es/b35221911/crm/form/loader_63.js');
+    `;
 
-      field.addEventListener("change", () => {
-        const error = this.querySelector(
-          `[data-error="${field.name}"]`
-        );
-
-        if (error) error.textContent = "";
-
-        field.removeAttribute("aria-invalid");
-      });
-    });
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      status.hidden = true;
-      status.className = "nct-form__status";
-
-      const fields = [
-        "name",
-        "email",
-        "phone",
-        "company",
-        "service",
-        "message"
-      ];
-
-      fields.forEach((name) => {
-        const error = this.querySelector(`[data-error="${name}"]`);
-        if (error) error.textContent = "";
-      });
-
-      const honeypot = form.elements.namedItem("website");
-
-      // Basic bot filtering. This is not a substitute for server-side protection.
-      if (honeypot && honeypot.value.trim()) {
-        status.textContent =
-          "We couldn't process this submission. Please try again.";
-        status.classList.add("nct-form__status--error");
-        status.hidden = false;
-        return;
-      }
-
-      let firstInvalid = null;
-
-      fields.forEach((name) => {
-        const field = form.elements.namedItem(name);
-        if (!field || !["name", "email", "service", "message"].includes(name)) {
-          return;
-        }
-
-        let errorText = "";
-
-        if (!field.value.trim()) {
-          errorText = "This field is required.";
-        } else if (name === "name" && field.value.trim().length < 2) {
-          errorText = "Please enter your full name.";
-        } else if (name === "email" && !field.validity.valid) {
-          errorText = "Please enter a valid email address.";
-        } else if (name === "message" && field.value.trim().length < 10) {
-          errorText = "Please provide a little more detail (at least 10 characters).";
-        }
-
-        if (errorText) {
-          const error = this.querySelector(`[data-error="${name}"]`);
-          if (error) error.textContent = errorText;
-
-          field.setAttribute("aria-invalid", "true");
-          if (!firstInvalid) firstInvalid = field;
-        }
-      });
-
-      if (firstInvalid) {
-        firstInvalid.focus();
-        return;
-      }
-
-      // Do not claim that a lead was sent when no CRM endpoint exists.
-      if (!CRM_ENDPOINT) {
-        status.textContent =
-          "The contact form is ready for review, but online submissions are not yet connected. Please contact the site administrator to finish the CRM integration before publishing this form.";
-        status.classList.add("nct-form__status--warning");
-        status.hidden = false;
-        return;
-      }
-
-      const submitButton = form.querySelector(".nct-submit");
-      const submitLabel = submitButton.querySelector(".nct-submit__label");
-
-      const payload = {
-        name: form.elements.namedItem("name").value.trim(),
-        email: form.elements.namedItem("email").value.trim(),
-        phone: form.elements.namedItem("phone").value.trim(),
-        company: form.elements.namedItem("company").value.trim(),
-        service: form.elements.namedItem("service").value,
-        message: form.elements.namedItem("message").value.trim()
-      };
-
-      submitButton.disabled = true;
-      submitLabel.textContent = "Submitting...";
-
-      try {
-        const response = await fetch(CRM_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-          throw new Error("CRM submission failed.");
-        }
-
-        status.textContent =
-          "Thank you. Your inquiry has been submitted successfully.";
-        status.classList.add("nct-form__status--success");
-        status.hidden = false;
-
-        form.reset();
-        charCount.textContent = "0 / 3000";
-      } catch (error) {
-        status.textContent =
-          "We couldn't submit your inquiry. Please try again later.";
-        status.classList.add("nct-form__status--error");
-        status.hidden = false;
-      } finally {
-        submitButton.disabled = false;
-        submitLabel.textContent = "Submit Inquiry";
-      }
-    });
+    container.appendChild(embedScript);
   }
 
   setupRevealAnimations() {
