@@ -1686,3 +1686,17 @@ body {
     transform: none;
   }
 }
+.nsp-final-cta__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  max-width: 100%;
+}
+
+.nsp-final-cta__mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

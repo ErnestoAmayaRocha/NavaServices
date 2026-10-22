@@ -1,4 +1,3 @@
-
 class NavaContact extends HTMLElement {
   connectedCallback() {
     if (this.dataset.initialized) return;
@@ -9,81 +8,72 @@ class NavaContact extends HTMLElement {
         <div class="nct-hero__grid"></div>
         <div class="nct-hero__glow"></div>
 
-        <div class="nct-container nct-hero__inner">
-          <div class="nct-hero__content nct-reveal">
-            <span class="nct-eyebrow nct-eyebrow--light">
-              <span></span>
-              CONTACT NAVA
-            </span>
+        
+<div class="nct-container nct-hero__inner">
 
-            <h1>
-              Let's talk about
-              <span>your business.</span>
-            </h1>
+  <!-- LEFT: CONTENT -->
+  <div class="nct-hero__content nct-reveal">
+    <span class="nct-eyebrow nct-eyebrow--light">
+      <span></span>
+      CONTACT NAVA
+    </span>
 
-            <p>
-              Every business has different needs. Tell us a little
-              about yours, and let's explore how accounting, tax,
-              and advisory services can help you move forward.
-            </p>
+    <h1>
+      Let's talk about
+      <span>your business.</span>
+    </h1>
 
-            <div class="nct-hero__highlights">
-              <div class="nct-highlight">
-                <span class="nct-highlight__icon">✓</span>
-                <div>
-                  <strong>Business-focused</strong>
-                  <span>Services built around your needs</span>
-                </div>
-              </div>
+    <p>
+      Every business has different needs. Tell us a little
+      about yours, and let's explore how accounting, tax,
+      and advisory services can help you move forward.
+    </p>
 
-              <div class="nct-highlight">
-                <span class="nct-highlight__icon">↗</span>
-                <div>
-                  <strong>Looking ahead</strong>
-                  <span>Clarity for your next decision</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="nct-hero__visual nct-reveal">
-            <div class="nct-hero-art">
-              <div class="nct-hero-art__ring nct-hero-art__ring--one"></div>
-              <div class="nct-hero-art__ring nct-hero-art__ring--two"></div>
-
-              <div class="nct-message-card">
-                <div class="nct-message-card__top">
-                  <div class="nct-message-card__logo">N</div>
-                  <div>
-                    <span>NAVA SERVICES GROUP</span>
-                    <strong>Let's get started</strong>
-                  </div>
-                </div>
-
-                <div class="nct-message-card__line"></div>
-                <div class="nct-message-card__line nct-message-card__line--short"></div>
-
-                <div class="nct-message-card__prompt">
-                  <span class="nct-message-card__prompt-icon">✳</span>
-                  <div>
-                    <strong>What does your business need?</strong>
-                    <p>Accounting. Taxes. Strategy.</p>
-                  </div>
-                </div>
-
-                <div class="nct-message-card__bottom">
-                  <span>YOUR NEXT CHAPTER STARTS HERE</span>
-                  <span>↗</span>
-                </div>
-              </div>
-
-              <div class="nct-art-note">
-                <span class="nct-art-note__dot"></span>
-                <span>Focused on your future</span>
-              </div>
-            </div>
-          </div>
+    <div class="nct-hero__highlights">
+      <div class="nct-highlight">
+        <span class="nct-highlight__icon">✓</span>
+        <div>
+          <strong>Business-focused</strong>
+          <span>Services built around your needs</span>
         </div>
+      </div>
+
+      <div class="nct-highlight">
+        <span class="nct-highlight__icon">↗</span>
+        <div>
+          <strong>Looking ahead</strong>
+          <span>Clarity for your next decision</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: IMAGE -->
+  <div class="nct-hero__visual nct-reveal">
+
+    <div class="nct-hero__visual-glow nct-hero__visual-glow--green"></div>
+    <div class="nct-hero__visual-glow nct-hero__visual-glow--gold"></div>
+    <div class="nct-hero__visual-grid"></div>
+
+    <div class="nct-hero-image-frame">
+      <img
+        class="nct-hero-image"
+        src="/assets/img/laura nava y antonio.png"
+        alt="NAVA Services Group helping business owners with accounting, taxes and financial strategy"
+        fetchpriority="high"
+      >
+
+      <div class="nct-hero-image-overlay"></div>
+
+      
+    </div>
+
+    
+
+  </div>
+
+</div>
+
 
         <div class="nct-hero__bottom">
           <span>ACCOUNTING</span>
@@ -194,7 +184,13 @@ class NavaContact extends HTMLElement {
             </h2>
           </div>
 
-          <div class="nct-bottom-cta__mark" aria-hidden="true">N</div>
+          <div class="nct-bottom-cta__mark">
+  <img
+    src="/assets/img/BLANCO-02.png"
+    alt="NAVA Services Group"
+    loading="lazy"
+  >
+</div>
         </div>
       </section>
     `;
@@ -215,7 +211,7 @@ class NavaContact extends HTMLElement {
     embedScript.setAttribute("data-b24-form", "inline/63/sg2p8b");
     embedScript.setAttribute(
       "data-b24-form-telemetry-sign",
-      "v1:63:site.7349b8c5a8ffa9e43cdfd32e00bb166813240dbd4a3d948aa386e579b326ccd8"
+      "v1:63:site.7349b8c5a8ffa9e43cdfd32e00bb166813240dbd4a3d948aa386e579b326ccd8",
     );
     embedScript.setAttribute("data-skip-moving", "true");
 
@@ -253,8 +249,8 @@ class NavaContact extends HTMLElement {
       },
       {
         threshold: 0.12,
-        rootMargin: "0px 0px -30px 0px"
-      }
+        rootMargin: "0px 0px -30px 0px",
+      },
     );
 
     elements.forEach((element) => observer.observe(element));

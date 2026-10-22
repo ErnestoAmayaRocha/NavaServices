@@ -1,4 +1,3 @@
-
 class NavaServicesPage extends HTMLElement {
   connectedCallback() {
     if (this.dataset.initialized) return;
@@ -539,12 +538,13 @@ class NavaServicesPage extends HTMLElement {
             </a>
           </div>
 
-          <div class="nsp-final-cta__mark" aria-hidden="true">
-            <span>N</span>
-            <i></i>
-            <i></i>
-            <i></i>
-          </div>
+         <div class="nsp-final-cta__mark">
+  <img
+    src="/assets/img/BLANCO-02.png"
+    alt="NAVA Services Group"
+    loading="lazy"
+  >
+</div>
         </div>
 
         <div class="nsp-final-cta__tagline">
@@ -577,8 +577,8 @@ class NavaServicesPage extends HTMLElement {
       },
       {
         threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
-      }
+        rootMargin: "0px 0px -35px 0px",
+      },
     );
 
     elements.forEach((element) => observer.observe(element));
