@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Page Not Found | NAVA Services Group</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#061A2F">
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/components/nava-header.css">
+  <link rel="stylesheet" href="/components/nava-footer.css">
+
+  <style>
+    :root {
+      --navy: #061A2F;
+      --green: #69AD49;
+      --gold: #F5A900;
+      --white: #FFFFFF;
+      --muted: #AAB7C5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .error-page {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 100px 24px;
+      overflow: hidden;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 15% 20%, rgba(105,173,73,.12), transparent 42%),
+        radial-gradient(ellipse at 85% 80%, rgba(245,169,0,.09), transparent 38%),
+        var(--navy);
+    }
+
+    .error-page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
+    }
+
+    .error-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .error-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      padding: 9px 15px;
+      border: 1px solid rgba(105,173,73,.35);
+      border-radius: 100px;
+      color: #B9E3A5;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .error-label span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(105,173,73,.7);
+    }
+
+    .error-number {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(100px, 24vw, 210px);
+      font-weight: 800;
+      letter-spacing: -12px;
+      line-height: .95;
+    }
+
+    .error-number span {
+      color: var(--green);
+    }
+
+    .error-content h1 {
+      margin: 30px 0 16px;
+      font-size: clamp(27px, 5vw, 42px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .error-description {
+      max-width: 510px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .error-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 25px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .error-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .error-button--primary {
+      background: var(--green);
+      color: var(--navy);
+    }
+
+    .error-button--primary:hover {
+      background: #7DC65B;
+    }
+
+    .error-button--secondary {
+      border-color: rgba(255,255,255,.25);
+      color: var(--white);
+    }
+
+    .error-button--secondary:hover {
+      background: rgba(255,255,255,.07);
+    }
+
+    .error-bottom {
+      margin-top: 55px;
+      color: #718398;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .error-bottom span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 480px) {
+      .error-page {
+        padding: 80px 20px;
+      }
+
+      .error-number {
+        letter-spacing: -6px;
+      }
+
+      .error-description {
+        font-size: 14px;
+      }
+
+      .error-actions {
+        flex-direction: column;
+      }
+
+      .error-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="error-page">
+    <div class="error-content">
+      <div class="error-label">
+        <span></span>
+        Error 404 · Page Not Found
+      </div>
+
+      <p class="error-number" aria-hidden="true">4<span>0</span>4</p>
+
+      <h1>This page seems to be off the books.</h1>
+
+      <p class="error-description">
+        The page you're looking for may have been moved, removed,
+        or the address may be incorrect. Let's get you back on track.
+      </p>
+
+      <div class="error-actions">
+        <a class="error-button error-button--primary" href="/index.html">
+          Back to Home
+        </a>
+
+        <a class="error-button error-button--secondary" href="/contact.html">
+          Contact Our Team
+        </a>
+      </div>
+
+      <div class="error-bottom">
+        NAVA Services Group <span>·</span> Accounting · Tax · Advisory
+      </div>
+    </div>
+  </main>
+</body>
+</html>
