@@ -1,4 +1,3 @@
-
 class NavaHeader extends HTMLElement {
   connectedCallback() {
     if (this.dataset.rendered === "true") return;
@@ -44,6 +43,14 @@ class NavaHeader extends HTMLElement {
             <a class="nava-nav__cta" href="/contact.html" data-page="contact">
               Contact Us <span aria-hidden="true">↗</span>
             </a>
+            <a
+  class="nava-nav__cta"
+  href="https://secure.cpacharge.com/pages/navaServicesgroup/payments"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Payments
+</a>
 
             <div class="nava-language">
               <div class="gtranslate_wrapper"></div>
@@ -64,27 +71,21 @@ class NavaHeader extends HTMLElement {
       toggle.setAttribute("aria-expanded", String(isOpen));
       toggle.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation menu" : "Open navigation menu"
+        isOpen ? "Close navigation menu" : "Open navigation menu",
       );
     });
 
     // Marcar la página actual
-    const normalizePath = (path) =>
-      path.replace(/\/+$/, "") || "/";
+    const normalizePath = (path) => path.replace(/\/+$/, "") || "/";
 
     const currentPath = normalizePath(window.location.pathname);
 
-    this.querySelectorAll(
-      ".nava-nav__link, .nava-nav__cta"
-    ).forEach((link) => {
+    this.querySelectorAll(".nava-nav__link, .nava-nav__cta").forEach((link) => {
       const linkPath = normalizePath(new URL(link.href).pathname);
 
       const isHome =
         link.dataset.page === "home" &&
-        (
-          currentPath === "/" ||
-          currentPath.endsWith("/index.html")
-        );
+        (currentPath === "/" || currentPath.endsWith("/index.html"));
 
       if (linkPath === currentPath || isHome) {
         link.classList.add("is-active");
@@ -96,42 +97,37 @@ class NavaHeader extends HTMLElement {
     this.fixHomeTranslation();
   }
 
-  
-fixHomeTranslation() {
-  const homeLink = this.querySelector('[data-page="home"]');
-  if (!homeLink) return;
+  fixHomeTranslation() {
+    const homeLink = this.querySelector('[data-page="home"]');
+    if (!homeLink) return;
 
-  const correctTranslation = () => {
-    // Obtener únicamente los nodos de texto del enlace
-    const walker = document.createTreeWalker(
-      homeLink,
-      NodeFilter.SHOW_TEXT
-    );
+    const correctTranslation = () => {
+      // Obtener únicamente los nodos de texto del enlace
+      const walker = document.createTreeWalker(homeLink, NodeFilter.SHOW_TEXT);
 
-    let node;
+      let node;
 
-    while ((node = walker.nextNode())) {
-      if (node.textContent.trim() === "Hogar") {
-        node.textContent = node.textContent.replace("Hogar", "Inicio");
+      while ((node = walker.nextNode())) {
+        if (node.textContent.trim() === "Hogar") {
+          node.textContent = node.textContent.replace("Hogar", "Inicio");
+        }
       }
-    }
-  };
+    };
 
-  correctTranslation();
-
-  const observer = new MutationObserver(() => {
     correctTranslation();
-  });
 
-  observer.observe(homeLink, {
-    childList: true,
-    characterData: true,
-    subtree: true
-  });
+    const observer = new MutationObserver(() => {
+      correctTranslation();
+    });
 
-  this._homeTranslationObserver = observer;
-}
+    observer.observe(homeLink, {
+      childList: true,
+      characterData: true,
+      subtree: true,
+    });
 
+    this._homeTranslationObserver = observer;
+  }
 }
 
 if (!customElements.get("nava-header")) {
